@@ -35,15 +35,15 @@ public class Alarm : MonoBehaviour
     {
         if (_coroutine == null)
         {
-            _coroutine = StartCoroutine(SoundVolumeAlarm(_duration, isAlarm));
+            _coroutine = StartCoroutine(SetVolumeAlarm(_duration, isAlarm));
         }
         else
         {
             StopCoroutine(_coroutine);
-            _coroutine = StartCoroutine(SoundVolumeAlarm(_duration, isAlarm));
+            _coroutine = StartCoroutine(SetVolumeAlarm(_duration, isAlarm));
         }    
     }
-    private IEnumerator SoundVolumeAlarm(float duration, bool isAlarm)
+    private IEnumerator SetVolumeAlarm(float duration, bool isAlarm)
     {
         float currentTime = 0;
         float startSound;
